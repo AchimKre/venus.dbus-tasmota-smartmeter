@@ -14,24 +14,24 @@ In the Python file, you should put the IP of your Tasmota device that hosts the 
 
 1. Copy the files to the /data folder on your venus:
 
-   - /data/dbus-tasmota-smartmeter/dbus-tasmota-smartmeter.py
-   - /data/dbus-tasmota-smartmeter/kill_me.sh
-   - /data/dbus-tasmota-smartmeter/service/run
+   - `wget -O main.zip https://github.com/AchimKre/venus.dbus-tasmota-smartmeter/archive/refs/heads/main.zip`
+   - `unzip main.zip -d /data`
+   - `mv /data/venus.dbus-tasmota-smartmeter-main /data/dbus-tasmota-smartmeter`
+   - `rm main.zip`
 
 2. Set permissions for files:
 
-   `chmod 755 /data/dbus-tasmota-smartmeter/service/run`
+   - `chmod 755 /data/dbus-tasmota-smartmeter/service/run`
+   - `chmod 744 /data/dbus-tasmota-smartmeter/kill_me.sh`
 
-   `chmod 744 /data/dbus-tasmota-smartmeter/kill_me.sh`
+3. Get two files from [velib_python](https://github.com/victronenergy/velib_python) and install them on your venus:
 
-3. Get two files from the [velib_python](https://github.com/victronenergy/velib_python) and install them on your venus:
-
-   - /data/dbus-tasmota-smartmeter/vedbus.py
-   - /data/dbus-tasmota-smartmeter/ve_utils.py
+   - `wget -O /data/dbus-tasmota-smartmeter/vedbus.py https://raw.githubusercontent.com/victronenergy/velib_python/refs/heads/master/vedbus.py`
+   - `wget -O /data/dbus-tasmota-smartmeter/ve_utils.py https://raw.githubusercontent.com/victronenergy/velib_python/refs/heads/master/ve_utils.py`
 
 4. Add a symlink to the file /data/rc.local:
 
-   `ln -s /data/dbus-tasmota-smartmeter/service /service/dbus-tasmota-smartmeter`
+   - `ln -s /data/dbus-tasmota-smartmeter/service /service/dbus-tasmota-smartmeter`
 
    Or if that file does not exist yet, store the file rc.local from this service on your Raspberry Pi as /data/rc.local .
    You can then create the symlink by just running rc.local:
