@@ -8,7 +8,7 @@ The Python script cyclically reads data from a micro controller with Tasmota and
 
 ### Configuration
 
-In the Python file, you should put the IP of your Tasmota device that hosts the REST API. In addition, you need to change the JSON attributes in lines 80-94 according to your JSON structure (see your tasmota device: http://192.168.XXX.XXX/cm?cmnd=status%2010)
+In the Python file, you should put the IP of your Tasmota device that hosts the REST API. In addition, you need to change the JSON attributes in lines 80-94 according to your JSON structure (see your tasmota device: http://192.168.XXX.XXX/cm?cmnd=status%2010) and the update frequency in line 67.
 
 ### Installation
 
