@@ -1,3 +1,5 @@
+Thanks to AchimKre for his work!
+
 # dbus-tasmota-smartmeter Service
 
 ### Purpose
@@ -8,7 +10,7 @@ The Python script cyclically reads data from a micro controller with Tasmota and
 
 ### Configuration
 
-In the Python file, you should put the IP of your Tasmota device that hosts the REST API. In addition, you need to change the JSON attributes in lines 80-94 according to your JSON structure (see your tasmota device: http://192.168.XXX.XXX/cm?cmnd=status%2010)
+In the Python file, you should put the IP of your Tasmota device that hosts the REST API. In addition, you need to change the JSON attributes in lines 80-94 according to your JSON structure (see your tasmota device: http://192.168.XXX.XXX/cm?cmnd=status%2010) and the update frequency in line 67.
 
 ### Installation
 
@@ -76,11 +78,11 @@ The daemon-tools will restart the scriptwithin a few seconds.
 
 In my installation at home, I am using the following Hardware:
 
-- Many Hoymiles Inverter
-- ESP8266 mini Board d1 and bitShake SmartMeterReader
+- Many Hoymiles Inverter (4x HM-1500, 1x HM-700, 1x HM-600)
+- ESP8266 Board and Hichi-IR-reader for smartmeter
 - Victron MultiPlus-II - Battery Inverter (single phase)
-- Cerbo GX
-- Pylontech US5000 - LiFePO Battery
+- Cerbo-S GX
+- 4x Pylontech US3000 - LiFePO Battery
 
 ## Thank you
 
