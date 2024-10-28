@@ -64,11 +64,8 @@ class DbusSmartmeterService:
     self._lastUpdate = 0
  
     # add _update function 'timer'
-    gobject.timeout_add(250, self._update) # pause 250ms before the next request
-    
-    # add _signOfLife 'timer' to get feedback in log every 5minutes
-    gobject.timeout_add(1000, self._update)
- 
+    gobject.timeout_add(1000, self._update) # pause 1s before the next request
+     
   def _update(self):   
   
     try:
