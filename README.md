@@ -2,13 +2,13 @@
 
 ### Purpose
 
-This service is meant to be run on a cerbo gx with Venus OS from Victron.
+This service is meant to be run on a Cerbo GX / Cerbo-S GX / RaspberryPi or any other hardware with Venus OS from Victron.
 
-The Python script cyclically reads data from a micro controller with Tasmota and an IR reader via REST API and publishes information on the dbus, using the service name com.victronenergy.grid. This makes the Venus OS work as if you had a physical Victron Grid Meter installed.
+The Python script cyclically reads data from a micro controller with Tasmota (mostly ESP8266 or ESP32) and an IR reader (Hichi, bitShake, ...) via REST API and publishes information on the dbus, using the service name com.victronenergy.grid. This makes the Venus OS work as if you had a physical Victron Grid Meter installed.
 
 ### Configuration
 
-In the Python file, you should put the IP of your Tasmota device that hosts the REST API. In addition, you need to change the JSON attributes in lines 80-94 according to your JSON structure (see your tasmota device: http://192.168.XXX.XXX/cm?cmnd=status%2010) and the update frequency in line 67.
+In the Python file, you should put the IP of your Tasmota device that hosts the REST API. In addition, you need to change the JSON attributes in lines 80-94 according to your JSON structure (see your tasmota device: http://192.168.XXX.XXX/cm?cmnd=status%2010) and the update frequency in line 67 (1s should be good for most smart meters, smaller update intervals are rare, some of them even update only every 3s).
 
 ### Installation
 
